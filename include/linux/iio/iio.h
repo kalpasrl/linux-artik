@@ -1,12 +1,20 @@
 
 /* The industrial I/O core
  *
- * Copyright (c) 2008 Jonathan Cameron
+ * Copyright (c) 2017 KALPA SRL
+ *
+ * Author: Danilo Sia <info@kalpa.it>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 as published by
  * the Free Software Foundation.
+ *
+ * The original version of this file can be found at:
+ * <https://github.com/torvalds/linux/blob/master/include/linux/iio/iio.h>
+ *
  */
+
+
 #ifndef _INDUSTRIAL_IO_H_
 #define _INDUSTRIAL_IO_H_
 
@@ -43,6 +51,7 @@ enum iio_chan_info_enum {
 	IIO_CHAN_INFO_CALIBWEIGHT,
 	IIO_CHAN_INFO_DEBOUNCE_COUNT,
 	IIO_CHAN_INFO_DEBOUNCE_TIME,
+    IIO_CHAN_INFO_OVERSAMPLING_RATIO,
 };
 
 enum iio_shared_by {

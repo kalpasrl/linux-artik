@@ -1,13 +1,19 @@
 /* The industrial I/O core
  *
- * Copyright (c) 2008 Jonathan Cameron
+ * Copyright (c) 2017 KALPA SRL
+ * Author: Danilo Sia <info@kalpa.it>
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 as published by
  * the Free Software Foundation.
  *
  * Based on elements of hwmon and input subsystems.
+ *
+ * The original version of this file can be found at:
+ * <https://github.com/torvalds/linux/blob/master/drivers/iio/industrialio-core.c>
+ *
  */
+
 
 #define pr_fmt(fmt) "iio-core: " fmt
 
@@ -128,6 +134,7 @@ static const char * const iio_chan_info_postfix[] = {
 	[IIO_CHAN_INFO_CALIBWEIGHT] = "calibweight",
 	[IIO_CHAN_INFO_DEBOUNCE_COUNT] = "debounce_count",
 	[IIO_CHAN_INFO_DEBOUNCE_TIME] = "debounce_time",
+    [IIO_CHAN_INFO_OVERSAMPLING_RATIO] = "oversampling_ratio",
 };
 
 /**

@@ -323,24 +323,6 @@
 			};
 		};
 	};	/*** soc ***/
-
-	panel: panel-simple {
-		compatible = "samsung,ltn101nt05", "simple-panel";
-		status = "okay";
-
-		pinctrl-names = "default";
-		pinctrl-0 = <&dp_rgb_vclk &dp_rgb_vsync &dp_rgb_hsync
-			&dp_rgb_de &dp_rgb_R &dp_rgb_G &dp_rgb_B>;
-		enable-gpios = <&gpio_d 17 0>;
-
-		width-mm = <210>;
-		height-mm = <158>;
-
-		port {
-			rgb_panel: endpoint {
-			};
-		};
-	};
 };
 
 &dp_drm {
@@ -358,30 +340,5 @@
 			color_key = < 0x0 >;
 			plane-names = "video", "primary", "rgb";
 		};
-	};
-};
-
-&dp_drm_rgb {
-	remote-endpoint = <&rgb_panel>;
-	status = "okay";
-
-	dp_control {
-		clk_src_lv0 = <0>;
-		clk_div_lv0 = <16>;
-		clk_src_lv1 = <7>;
-		clk_div_lv1 = <1>;
-		out_format = <2>;
-		invert_field = <0>;
-		swap_rb = <0>;
-		yc_order = <0>;
-		delay_mask = < ((1<<0) | (1<<1) | (1<<2) | (1<<3)) >;
-		d_rgb_pvd = <0>;
-		d_hsync_cp1 = <0>;
-		d_vsync_fram = <0>;
-		d_de_cp2 = <7>;
-		vs_start_offset = <863>;
-		ev_start_offset = <863>;
-		vs_end_offset = <0>;
-		ev_end_offset = <0>;
 	};
 };
